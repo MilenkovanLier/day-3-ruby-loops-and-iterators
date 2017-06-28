@@ -19,6 +19,11 @@ ingredients = [
   { name: 'salt', quantity: 'some' },
 ]
 
+puts "*    Lets's cook a Spanish Omelette!    *"
+print_divider
 
+puts "You need the folliwing ingredients:"
 
-]
+ingredients.each do |ingredient|
+  puts "*  #{ingredient(quantity)}: #{ingredient(name)}   *"
+end 
