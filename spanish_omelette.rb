@@ -26,4 +26,23 @@ puts "You need the folliwing ingredients:"
 
 ingredients.each do |ingredient|
   puts "*  #{ingredient(quantity)}: #{ingredient(name)}   *"
-end 
+end
+
+
+loop do
+  puts "\n "
+  print_divider
+
+  puts "Have you got all the ingredients (Y/N)?"
+answer = gets.chomp.capitalise
+
+if answer == 'N'
+  puts "You need to go shopping"
+  print_progress_bar
+elsif answer == 'Y'
+  puts "Lets get cooking!"
+  break
+else
+  puts "Thats not a vald input. Try again."
+end
+end  
