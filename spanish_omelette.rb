@@ -22,10 +22,10 @@ ingredients = [
 puts "*    Lets's cook a Spanish Omelette!    *"
 print_divider
 
-puts "You need the folliwing ingredients:"
+puts "You need the following ingredients:"
 
 ingredients.each do |ingredient|
-  puts "*  #{ingredient(quantity)}: #{ingredient(name)}   *"
+  puts "*  #{ingredient[:quantity]}: #{ingredient[:name]}   *"
 end
 
 
@@ -34,7 +34,7 @@ loop do
   print_divider
 
   puts "Have you got all the ingredients (Y/N)?"
-answer = gets.chomp.capitalise
+answer = gets.chomp.capitalize
 
 if answer == 'N'
   puts "You need to go shopping"
@@ -64,3 +64,10 @@ steps = [
   { description: "When almost set, invert on a plate and slide back into the pan", action: "generic_recipe_step" },
   { description: "Cook a few more minutes and slide on to a plate and cool for 10 minutes before serving", action: "generic_recipe_step" }
 ]
+
+print_divider
+puts "see below the different steps to follow:"
+
+steps.each_with_index do |step, index|
+  puts (index + 1).to_s + ") " + step[:description]
+end
